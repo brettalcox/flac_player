@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace flac_test
 {
@@ -164,10 +165,17 @@ namespace flac_test
         void loadFileNames()
         {
             listBox1.Items.Clear();
-            DirectoryInfo dinfo = new DirectoryInfo(filepath);//"C:\\Users\\BA042808\\Music\\test");
-            FileInfo[] Files = dinfo.GetFiles("*.mp3");
+            DirectoryInfo dinfo = new DirectoryInfo(filepath);
+            //FileInfo[] Files = dinfo.GetFiles("*.mp3");
 
-            foreach( FileInfo file in Files )
+            string[] extensions = new[] { ".flac", ".mp3", ".ogg" };
+
+            FileInfo[] Files =
+                dinfo.GetFiles()
+                     .Where(f => extensions.Contains(f.Extension.ToLower()))
+                     .ToArray();
+
+            foreach ( FileInfo file in Files )
             {
                 listBox1.Items.Add(file.Name);
             }
