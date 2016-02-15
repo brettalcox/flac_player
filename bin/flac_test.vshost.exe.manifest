@@ -4,7 +4,7 @@
   <description asmv2:iconFile="App.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="flac_test" version="1.0.5886.28499" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="flac_test" version="1.0.5889.19347" language="neutral" processorArchitecture="amd64" />
     <commandLine file="flac_test.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="flac_test.exe" size="17384">
-      <assemblyIdentity name="flac_test" version="1.0.5886.28499" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="flac_test" version="1.0.5889.19347" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aTrcnQ7Lod/+ZzgCo6HuM6yujuDn66xm90+OzruoR0M=</dsig:DigestValue>
+        <dsig:DigestValue>AfiJJWMafx5zIcLLJK1U1CndJtXwhfabwC7HMgEoCXw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

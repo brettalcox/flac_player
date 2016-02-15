@@ -10,3 +10,4 @@ C:\Users\BA042808\Documents\Visual Studio 2015\Projects\flac_test\flac_player\bi
 C:\Users\BA042808\Documents\Visual Studio 2015\Projects\flac_test\flac_player\bin\flac_test.application
 C:\Users\BA042808\Documents\Visual Studio 2015\Projects\flac_test\flac_player\obj\x64\Debug\flac_test.exe.manifest
 C:\Users\BA042808\Documents\Visual Studio 2015\Projects\flac_test\flac_player\obj\x64\Debug\flac_test.application
+C:\Users\BA042808\Documents\Visual Studio 2015\Projects\flac_test\flac_player\obj\x64\Debug\flac_test.csprojResolveAssemblyReference.cache

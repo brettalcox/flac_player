@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace flac_test
 {
@@ -25,6 +26,7 @@ namespace flac_test
         private ListBox listBox1;
 
         private string filepath;
+        private int currentlySelectedIndex;
 
         /// <summary>
         /// Required designer variable.
@@ -41,6 +43,7 @@ namespace flac_test
             // create irrklang sound engine
 
             filepath = "C:\\Users\\BA042808\\Music\\test";
+            currentlySelectedIndex = 0;
             loadFileNames();
 
 			irrKlangEngine = new IrrKlang.ISoundEngine();
@@ -191,15 +194,31 @@ namespace flac_test
 
             // start new sound
 
-            currentlyPlayingSound = irrKlangEngine.Play2D(filepath + "\\" + listBox1.SelectedItem as String, true);
+            currentlySelectedIndex = listBox1.SelectedIndex;
+            currentlyPlayingSound = irrKlangEngine.Play2D(filepath + "\\" + listBox1.SelectedItem as String, false);
 
-			// update controls to display the playing file
 
+            // update controls to display the playing file
+
+            System.Threading.Timer timer = new System.Threading.Timer(callback, "hello", TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(2));
 			UpdatePauseButtonText();
 			
             volumeTrackBar.Value = 100;
+
 		}
 
+        private void callback(object state)
+        {
+            if (currentlyPlayingSound != null)
+            {
+                if (currentlyPlayingSound.Finished)
+                {
+                    currentlySelectedIndex += 1;
+                    string nextSong = listBox1.Items[currentlySelectedIndex].ToString();
+                    currentlyPlayingSound = irrKlangEngine.Play2D(filepath + "\\" + nextSong as String, false);
+                }
+            }
+        }
 
 		// pauses or unpauses the currently playing sound
 		private void PauseButton_Click(object sender, System.EventArgs e)
